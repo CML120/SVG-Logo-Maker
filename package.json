@@ -12,7 +12,7 @@
   "author": "Chee Lor",
   "license": "MIT",
   "dependencies": {
-    "inquirer": "^9.2.8"
+    "inquirer": "^8.2.4"
   },
   "devDependencies": {
     "jest": "^29.6.1"
