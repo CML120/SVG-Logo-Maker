@@ -45,3 +45,6 @@
   Please contact [CML120](https://github.com/CML120) at cheelor922@gmail.com with any questions.
 
 ![Alt text](image.png)
+
+https://github.com/CML120/SVG-Logo-Maker/assets/126404917/c634c5d6-b013-4059-861a-6f2213aaabf5
+
