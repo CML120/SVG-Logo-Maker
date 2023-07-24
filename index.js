@@ -1,6 +1,8 @@
-// packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+//Import classes for shapes
 const { Circle, Triangle, Square  } = require('./lib/shapes')
 
 // Validate if the input is a valid color
@@ -9,6 +11,8 @@ function isValidColor(input) {
     return colorRegex.test(input);
   }
   
+
+//Questions/Input prompt
 function questionsPrompt () {
     inquirer    
         .prompt([
@@ -38,6 +42,8 @@ function questionsPrompt () {
                 validate: (input) => isValidColor(input) ? true : 'Invalid color. Please enter a valid color',
               },
         ])
+
+        //passes answers to the generateSVG function
         .then(answers =>{
             const { text, textColor, shape, shapeColor } = answers;
             generateSVG(text, textColor, shape, shapeColor);  
@@ -50,7 +56,7 @@ function questionsPrompt () {
 function generateSVG(text, textColor, shape, shapeColor) {
     let svgShape;
   
-    // create the shape based on selected choice
+    // Create the shape based on selected choice
     switch (shape.toLowerCase()) {
       case 'circle':
         svgShape = new Circle();
@@ -66,10 +72,10 @@ function generateSVG(text, textColor, shape, shapeColor) {
         return;
     }
   
-    // set the shape color
+    // Set the shape color
     svgShape.setColor(shapeColor);
   
-    // create the SVG markup
+    // Create the SVG markup
     const svgMarkup = `
   <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
     ${svgShape.render()}
@@ -77,12 +83,13 @@ function generateSVG(text, textColor, shape, shapeColor) {
   </svg>
   `;
   
-    // write file
+    // Write file
     fs.writeFileSync('logo.svg', svgMarkup);
   
     console.log('SVG logo generated successfully!');
   }
 
+//Init function with "title"
 function init() {
     console.log(`
 ================================================================================================================================================
