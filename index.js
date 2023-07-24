@@ -38,10 +38,50 @@ function questionsPrompt () {
                 validate: (input) => isValidColor(input) ? true : 'Invalid color. Please enter a valid color',
               },
         ])
+        .then(answers =>{
+            const { text, textColor, shape, shapeColor } = answers;
+            generateSVG(text, textColor, shape, shapeColor);  
+        })
+        .catch(error => console.error(error));
 }
 
 
-
+// Function to generate the SVG logo
+function generateSVG(text, textColor, shape, shapeColor) {
+    let svgShape;
+  
+    // Create the appropriate shape object based on user choice
+    switch (shape.toLowerCase()) {
+      case 'circle':
+        svgShape = new Circle();
+        break;
+      case 'triangle':
+        svgShape = new Triangle();
+        break;
+      case 'square':
+        svgShape = new Square();
+        break;
+      default:
+        console.log('Invalid shape choice.');
+        return;
+    }
+  
+    // Set the shape color
+    svgShape.setColor(shapeColor);
+  
+    // Create the SVG markup
+    const svgMarkup = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    ${svgShape.render()}
+    <text x="150" y="130" text-anchor="middle" fill="${textColor}" font-size="40px" font-family="Arial, sans-serif">${text}</text>
+  </svg>
+  `;
+  
+    // Write the SVG to a file named 'logo.svg'
+    fs.writeFileSync('logo.svg', svgMarkup);
+  
+    console.log('SVG logo generated successfully!');
+  }
 
 function init() {
     console.log(`
