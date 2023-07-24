@@ -50,7 +50,7 @@ function questionsPrompt () {
 function generateSVG(text, textColor, shape, shapeColor) {
     let svgShape;
   
-    // Create the appropriate shape object based on user choice
+    // create the shape based on selected choice
     switch (shape.toLowerCase()) {
       case 'circle':
         svgShape = new Circle();
@@ -66,10 +66,10 @@ function generateSVG(text, textColor, shape, shapeColor) {
         return;
     }
   
-    // Set the shape color
+    // set the shape color
     svgShape.setColor(shapeColor);
   
-    // Create the SVG markup
+    // create the SVG markup
     const svgMarkup = `
   <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
     ${svgShape.render()}
@@ -77,7 +77,7 @@ function generateSVG(text, textColor, shape, shapeColor) {
   </svg>
   `;
   
-    // Write the SVG to a file named 'logo.svg'
+    // write file
     fs.writeFileSync('logo.svg', svgMarkup);
   
     console.log('SVG logo generated successfully!');
