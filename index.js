@@ -1,6 +1,7 @@
 // packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { Circle, Triangle, Square  } = require('./lib/shapes')
 
 // Validate if the input is a valid color
 function isValidColor(input) {
