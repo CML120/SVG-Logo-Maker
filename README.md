@@ -27,9 +27,9 @@
 
 
   ## Usage 
-  Run the program in the terminal using the scripts found in the package.json file.
+  Run the program in the terminal using the scripts found in the package.json file.  
   "npm start" will start the app
-  "npm test" will run the jest tests
+
 
 
   ## Contribution
@@ -37,7 +37,7 @@
 
 
   ## Testing
-  Run the program in the terminal using the scripts found in the package.json file.
+  Run the program in the terminal using the scripts found in the package.json file.  
   "npm test" will run the jest tests
 
   
