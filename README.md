@@ -42,8 +42,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 ```
 
   ### License 
-  MIT
-  
+   
   [![Generic badge](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/.)
   
    
