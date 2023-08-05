@@ -47,7 +47,6 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   
    
 
-  
   ## Installation 
   Clone the repo, then open it via VS code.
 
